@@ -186,6 +186,10 @@
       <a name="label" val="FUNCT"/>
       <a name="width" val="6"/>
     </comp>
+    <comp lib="0" loc="(1550,1100)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
     <comp lib="0" loc="(1610,860)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="INMED32B"/>
@@ -208,6 +212,10 @@
     <comp lib="0" loc="(1790,1030)" name="Tunnel">
       <a name="label" val="ALUOpControl"/>
       <a name="width" val="3"/>
+    </comp>
+    <comp lib="0" loc="(1810,910)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(1830,850)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -260,23 +268,48 @@
       <a name="label" val="ALURESULT"/>
       <a name="width" val="32"/>
     </comp>
+    <comp lib="0" loc="(2550,820)" name="Probe">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="radix" val="16"/>
+    </comp>
+    <comp lib="0" loc="(2590,930)" name="Probe">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="radix" val="16"/>
+    </comp>
     <comp lib="0" loc="(260,750)" name="Tunnel">
       <a name="label" val="RESET"/>
     </comp>
-    <comp lib="0" loc="(2630,820)" name="Tunnel">
+    <comp lib="0" loc="(2600,720)" name="Probe">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="radix" val="16"/>
+    </comp>
+    <comp lib="0" loc="(2620,850)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="PCPLUS4"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(2690,860)" name="Tunnel">
+    <comp lib="0" loc="(270,700)" name="Tunnel">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(2750,850)" name="Probe">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="radix" val="16"/>
+    </comp>
+    <comp lib="0" loc="(2780,920)" name="Tunnel">
       <a name="facing" val="north"/>
       <a name="label" val="MEMTOREG"/>
       <a name="width" val="2"/>
     </comp>
-    <comp lib="0" loc="(270,700)" name="Tunnel">
-      <a name="label" val="CLK"/>
+    <comp lib="0" loc="(2820,910)" name="Probe">
+      <a name="appearance" val="NewPins"/>
+      <a name="facing" val="west"/>
+      <a name="radix" val="16"/>
     </comp>
-    <comp lib="0" loc="(2750,810)" name="Tunnel">
+    <comp lib="0" loc="(2830,810)" name="Tunnel">
       <a name="label" val="DATAWRITER"/>
       <a name="width" val="32"/>
     </comp>
@@ -582,8 +615,10 @@
     <wire from="(1470,610)" to="(1480,610)"/>
     <wire from="(1550,1010)" to="(1560,1010)"/>
     <wire from="(1550,1050)" to="(1570,1050)"/>
+    <wire from="(1550,1100)" to="(1570,1100)"/>
     <wire from="(1560,1010)" to="(1560,1030)"/>
     <wire from="(1560,1030)" to="(1570,1030)"/>
+    <wire from="(1570,1070)" to="(1570,1100)"/>
     <wire from="(1610,860)" to="(1660,860)"/>
     <wire from="(1630,810)" to="(1640,810)"/>
     <wire from="(1640,810)" to="(1640,840)"/>
@@ -594,7 +629,9 @@
     <wire from="(1770,750)" to="(1780,750)"/>
     <wire from="(1780,750)" to="(1780,810)"/>
     <wire from="(1780,810)" to="(1850,810)"/>
+    <wire from="(1810,910)" to="(1850,910)"/>
     <wire from="(1830,850)" to="(1850,850)"/>
+    <wire from="(1850,870)" to="(1850,910)"/>
     <wire from="(2020,760)" to="(2020,790)"/>
     <wire from="(2020,760)" to="(2040,760)"/>
     <wire from="(2020,790)" to="(2070,790)"/>
@@ -621,15 +658,28 @@
     <wire from="(240,750)" to="(260,750)"/>
     <wire from="(250,580)" to="(250,590)"/>
     <wire from="(250,580)" to="(330,580)"/>
-    <wire from="(2540,800)" to="(2670,800)"/>
+    <wire from="(2540,800)" to="(2550,800)"/>
     <wire from="(2550,720)" to="(2590,720)"/>
+    <wire from="(2550,800)" to="(2550,820)"/>
+    <wire from="(2550,800)" to="(2670,800)"/>
+    <wire from="(2580,890)" to="(2580,930)"/>
+    <wire from="(2580,890)" to="(2650,890)"/>
+    <wire from="(2580,930)" to="(2590,930)"/>
     <wire from="(2590,720)" to="(2590,790)"/>
+    <wire from="(2590,720)" to="(2600,720)"/>
     <wire from="(2590,790)" to="(2670,790)"/>
-    <wire from="(2630,820)" to="(2640,820)"/>
-    <wire from="(2640,810)" to="(2640,820)"/>
-    <wire from="(2640,810)" to="(2670,810)"/>
-    <wire from="(2690,830)" to="(2690,860)"/>
-    <wire from="(2710,810)" to="(2750,810)"/>
+    <wire from="(2620,850)" to="(2650,850)"/>
+    <wire from="(2650,810)" to="(2650,850)"/>
+    <wire from="(2650,810)" to="(2670,810)"/>
+    <wire from="(2650,850)" to="(2650,890)"/>
+    <wire from="(2690,830)" to="(2690,910)"/>
+    <wire from="(2690,910)" to="(2780,910)"/>
+    <wire from="(2710,810)" to="(2740,810)"/>
+    <wire from="(2740,810)" to="(2740,850)"/>
+    <wire from="(2740,810)" to="(2830,810)"/>
+    <wire from="(2740,850)" to="(2750,850)"/>
+    <wire from="(2780,910)" to="(2780,920)"/>
+    <wire from="(2780,910)" to="(2820,910)"/>
     <wire from="(290,530)" to="(290,540)"/>
     <wire from="(290,540)" to="(330,540)"/>
     <wire from="(330,560)" to="(340,560)"/>
@@ -1138,7 +1188,7 @@
     <comp lib="0" loc="(220,270)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="WriteData"/>
-      <a name="radix" val="16"/>
+      <a name="radix" val="10signed"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(260,1110)" name="Tunnel">
@@ -2536,6 +2586,10 @@
       <a name="labelfont" val="SansSerif bold 8"/>
       <a name="width" val="3"/>
     </comp>
+    <comp lib="0" loc="(170,170)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="CLK"/>
+    </comp>
     <comp lib="0" loc="(200,110)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="In2"/>
@@ -3116,6 +3170,10 @@
       <a name="appearance" val="NewPins"/>
       <a name="label" val="Funct"/>
       <a name="width" val="6"/>
+    </comp>
+    <comp lib="0" loc="(190,180)" name="Pin">
+      <a name="appearance" val="NewPins"/>
+      <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(230,60)" name="Splitter">
       <a name="facing" val="south"/>
