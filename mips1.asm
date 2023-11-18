@@ -3,65 +3,47 @@
 .globl main
 main:
 	# Cargar vector uno por uno
-	li $t0, 35
+
+	addi $t0, $zero, 35
 	sw $t0, 0($zero)
-	li $t0, 5
+	addi $t0, $zero, 5
 	sw $t0, 4($zero)
-	li $t0, 78
+	addi $t0, $zero, 78
 	sw $t0, 8($zero)
-	li $t0, -30
+	addi $t0, $zero, -30
 	sw $t0, 12($zero)
-	li $t0, -57
+	addi $t0, $zero, -57
 	sw $t0, 16($zero)
-	li $t0, 83
+	addi $t0, $zero, 83
 	sw $t0, 20($zero)
-	li $t0, -37
+	addi $t0, $zero, -37
 	sw $t0, 24($zero)
-	li $t0, 96
+	addi $t0, $zero, 96
 	sw $t0, 28($zero)
-	li $t0, -76
+	addi $t0, $zero, -76
 	sw $t0, 32($zero)
-	li $t0, -93
+	addi $t0, $zero, -93
 	sw $t0, 36($zero)
-	li $t0, -86
+	addi $t0, $zero, -86
 	sw $t0, 40($zero)
-	li $t0, -64
+	addi $t0, $zero, -64
 	sw $t0, 44($zero)
-	li $t0, -46
+	addi $t0, $zero, -46
 	sw $t0, 48($zero)
-	li $t0, 83
+	addi $t0, $zero, 83
 	sw $t0, 52($zero)
-	li $t0, 17
+	addi $t0, $zero, 17
 	sw $t0, 56($zero)
-	li $t0, 47
+	addi $t0, $zero, 47
 	sw $t0, 60($zero)
 	
-
-	
-	# Test
-	# Cargar vector uno por uno
-	#li $t0, 1
-	#sw $t0, ($zero)
-	#li $t0, -50
-	#sw $t0, 4($zero)
-	#li $t0, 4
-	#sw $t0, 8($zero)
-	#li $t0, 4
-	#sw $t0, 12($zero)
-	#li $t0, -1
-	#sw $t0, 16($zero)
-	#li $t0, 6
-	#sw $t0, 20($zero)
-	
 	# Ordenamiento por burbuja
-	
-	li $s0, 15 # Longitud del vector -1
-	
+	addi $s0, $zero,15 # Longitud del vector -1
 	add $s1, $zero, $zero #i
 	add $s2, $zero, $zero #j
 
 for_externo:
-	bge  $s1,$s0,Exit # for i in range(0, n-1)
+	bge  $s1,$s0,contar_paridad # for i in range(0, n-1)
 	
 	#addi $t0, $s1, 1 # aux = i + 1
 	sub $s4, $s0, $s1 # n = n - aux 
@@ -99,4 +81,30 @@ intercambia:
 	sw $t0, ($a1) # vector[j+1] = $t0
 	jr $ra
 
+contar_paridad:
+	
+	add $s6, $zero, $zero # contador para números pares
+	
+	add $t0, $zero, $zero #inicializamos $t0 = 0. Contador
+	la $t1, ($zero) # Apuntador al inicio del vector
+	
+	# si es impar, BSD = 1, 0 si es par
+check_paridad:
+	bge  $t0,$s0,Exit
+	lw $a0, ($t1)
+	andi $t2, $a0 , 0x01 # 1 si es impar, 0 si es par
+	beqz $t2, sumar_si_par
+else_sumar_si_par:
+	addi $t0, $t0, 1
+	addi $t1, $t1, 4 
+	j check_paridad
+
+sumar_si_par: 
+	addi $s6, $s6, 1
+	j else_sumar_si_par
+	
 Exit:
+	# Cálculo de impares
+	addi $s0, $s0, 1
+	sub $s5, $s0, $s6 # s5 tiene la cantidad de impares
+	
